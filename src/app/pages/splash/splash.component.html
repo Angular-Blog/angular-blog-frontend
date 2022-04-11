@@ -1,3 +1,23 @@
-<p>splash works!</p>
-<button *ngIf="!this.loggedIn" mat-button (click)="login()">Login</button>
-<button *ngIf="this.loggedIn" mat-button (click)="logout()">Logout</button>
+<div>
+    <mat-toolbar id="splashHeader" color="primary">
+        <span>Yo</span>
+        <button *ngIf="!this.loggedIn" mat-button (click)="login()">Login</button>
+        <button *ngIf="this.loggedIn" mat-button (click)="logout()">Logout</button>
+    </mat-toolbar>
+    <div class="splashContent">
+        <div class="header">
+            <span >Angular Blog</span>
+        </div>
+        <div class="description">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus vestibulum sed arcu non odio euismod lacinia at quis. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Nibh sit amet commodo nulla facilisi nullam vehicula. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Eu ultrices vitae auctor eu augue ut lectus arcu. Nibh venenatis cras sed felis eget velit aliquet sagittis. Feugiat vivamus at augue eget. Nibh nisl condimentum id venenatis a. Dictum varius duis at consectetur lorem donec massa. Id porta nibh venenatis cras sed felis eget. Vitae tortor condimentum lacinia quis vel. Nullam non nisi est sit amet facilisis. Tortor posuere ac ut consequat semper viverra. Laoreet id donec ultrices tincidunt.
+            </p>
+            <p>
+                Bibendum arcu vitae elementum curabitur. Etiam tempor orci eu lobortis elementum nibh. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Dis parturient montes nascetur ridiculus mus mauris. Lobortis feugiat vivamus at augue eget. In vitae turpis massa sed elementum tempus egestas sed sed. Vel turpis nunc eget lorem dolor sed viverra ipsum. Lacus vel facilisis volutpat est velit egestas. Et leo duis ut diam quam nulla porttitor. Condimentum id venenatis a condimentum vitae sapien. Volutpat odio facilisis mauris sit amet. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Duis at tellus at urna. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Facilisis magna etiam tempor orci eu. Diam vel quam elementum pulvinar. Ut pharetra sit amet aliquam id diam maecenas ultricies mi.
+            </p>
+        </div>
+        <div class="buttons">
+            <button mat-button>Login</button>
+        </div>
+    </div>
+</div>

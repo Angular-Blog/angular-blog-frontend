@@ -1,0 +1,61 @@
+$xl: 87.5em; // 4k and hi-res desktop
+$lg: 60em; // 1080 and hi-res laptops
+$med: 40em; // hi-res tablets and low-res laptops
+$sm: 28em; // mobile and low-res tablets
+$xs: 20em;
+
+@mixin responsive($query) {
+    @media ( min-width: + $query ) {
+        @content;
+    }
+}
+
+#splashHeader {
+    justify-content: space-between;
+}
+.splashContent {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    .header {
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        width: 100%;
+        span{
+            font-size: 48px;
+            margin: 80px 0px;
+            @include responsive($med) {
+                font-size: 64px;
+            }
+            @include responsive($lg) {
+                margin: 150px 0px;
+                font-size: 80px;
+            }
+            @include responsive($xl) {
+                font-size: 96px;
+            }
+        }
+    }
+    .description {
+        margin: 20px 40px;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        @include responsive($med) {
+            margin: 20px 80px;
+            p {
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+        }
+        @include responsive($lg) {
+            margin: 40px 160px;
+            p {
+                margin-bottom: 40px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SplashComponent } from './pages/splash/splash.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -14,8 +16,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'dash',
+    component: DashboardComponent
+  },
+  {
     path: '**',
-    redirectTo: 'splash'
+    component: PageNotFoundComponent
   }
 ];
 

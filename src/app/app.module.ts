@@ -17,13 +17,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SplashComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     StoreModule.forRoot({
