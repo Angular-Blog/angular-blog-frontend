@@ -1,12 +1,15 @@
 <div>
     <mat-toolbar id="splashHeader" color="primary">
-        <span>Yo</span>
+        <span>AB</span>
         <button *ngIf="!this.loggedIn" mat-button (click)="login()">Login</button>
         <button *ngIf="this.loggedIn" mat-button (click)="logout()">Logout</button>
     </mat-toolbar>
     <div class="splashContent">
         <div class="header">
-            <span >Angular Blog</span>
+            <span>Angular Blog</span>
+            <div class="logo">
+                <img src="./assets/logo-placeholder-image.png">
+            </div>
         </div>
         <div class="description">
             <p>
