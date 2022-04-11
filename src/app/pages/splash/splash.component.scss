@@ -20,7 +20,7 @@ $xs: 20em;
     .header {
         justify-content: center;
         display: flex;
-        text-align: center;
+        margin: auto;
         width: 100%;
         span{
             font-size: 48px;
@@ -55,6 +55,22 @@ $xs: 20em;
                 margin-bottom: 40px;
                 font-size: 20px;
             }
+        }
+    }
+    .buttons {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        width: 50%;
+        text-align: center;
+        button {
+            margin: 10px 0px;
+        }
+        @include responsive($med) {
+            width: 35%
+        }
+        @include responsive($lg) {
+            width: 25%
         }
     }
 }
