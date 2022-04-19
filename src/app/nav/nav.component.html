@@ -5,8 +5,8 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home" routerLinkActive="active">Home</a>
-      <a mat-list-item routerLink="/dash" routerLinkActive="active">Dash</a>
+      <a mat-list-item routerLink="/home/profile" routerLinkActive="active">Profile</a>
+      <a mat-list-item routerLink="/home/dash" routerLinkActive="active">Dash</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -26,7 +26,7 @@
       <button *ngIf="this.loggedIn" mat-button (click)="logout()">Logout</button>
     </mat-toolbar>
     <div id="mainContent">
-      <router-outlet></router-outlet>
+      <ng-content></ng-content>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
