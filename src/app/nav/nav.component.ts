@@ -34,8 +34,7 @@ export class NavComponent {
     }
 
     login() {
-      console.log(this.user$)
-      this.store.dispatch(loginUser())
+      this.router.navigate(['/login'])
     }
   
     logout() {

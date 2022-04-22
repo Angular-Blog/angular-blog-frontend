@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="saveDetails(form)">
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput type="email" required formControlName="email" placeholder="Your email">
+            <mat-icon matSuffix>mail_outline</mat-icon>
+            <mat-error *ngIf="form.value.email">Email must be valid</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" required formControlName="username" placeholder="Desired Username">
+            <mat-icon matSuffix>person_outline</mat-icon>
+            <mat-error *ngIf="form.value.email">Email must be valid</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" name="password" [type]="flag ? 'password' : 'text'" required pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$">
+            <mat-icon (click)="flag=!flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off' }}</mat-icon>
+            <mat-error *ngIf="form.value.password">Password must be a combination of lower-case, upper-case, numbers and be at least 8 characters long</mat-error>
+          </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="confirmpassword" name="confirmpassword" [type]="flag2 ? 'password' : 'text'" required pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$">
+            <mat-icon (click)="flag2=!flag2" matSuffix>{{ flag2 ? 'visibility' : 'visibility_off' }}</mat-icon>
+            <mat-error *ngIf="form.value.password">Value does not match password</mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Sign Up</button>
+    </form>
+</div>

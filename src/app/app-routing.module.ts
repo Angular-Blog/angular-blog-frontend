@@ -5,37 +5,37 @@ import { SplashComponent } from './pages/splash/splash.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { NavComponent } from './nav/nav.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: SplashComponent,
-  },
-  {
     path: 'login',
-    component: HomeComponent
+    component: LoginComponent
   },
   {
     path: 'home',
     children: [
       {
-        path: 'dash',
-        component: DashboardComponent
-      },
-      {
         path: 'profile',
         component: HomeComponent
       },
       {
+        path: '',
+        component: DashboardComponent
+      },
+      {
         path: '**',
-        redirectTo: 'dash'
+        component: PageNotFoundComponent
       }
     ]
   },
   {
+    path: '',
+    component: SplashComponent,
+  },
+  {
     path: '**',
-    redirectTo: 'splash'
+    redirectTo: ''
   }
 ];
 

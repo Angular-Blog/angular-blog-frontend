@@ -23,8 +23,7 @@ export class SplashComponent implements OnInit {
   }
 
   login() {
-    this.store.dispatch(loginUser())
-    this.router.navigate(['/home'])
+    this.router.navigate(['login'])
   }
 
   logout() {
