@@ -4,18 +4,26 @@ import { createReducer, on } from "@ngrx/store";
 
 const initialState: User = {
     loggedIn: false,
-    username: "",
-    userId: ""
+    username: ""
 }
 
 const mockLogin: User = {
     loggedIn: true,
-    username: "tester",
-    userId: "123" 
+    username: "tester"
 }
 
 export const userReducer = createReducer(
     initialState,
-    on(loginUser, (state) => mockLogin),
-    on(logoutUser, (state) => initialState)
+    on(loginUser, (state, {username}) => loginFunction(username)),
+    on(logoutUser, (state) => logoutFunction())
 )
+
+function loginFunction(username: string) {
+    const newState: User = {username: username, loggedIn: true}
+    return newState;
+}
+
+function logoutFunction() {
+    localStorage.setItem('currentUser', '')
+    return initialState
+}

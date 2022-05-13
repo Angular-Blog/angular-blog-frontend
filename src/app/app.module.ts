@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './pages/login/login-form/login-form.component';
 import { SignupFormComponent } from './pages/login/signup-form/signup-form.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,11 @@ import { SignupFormComponent } from './pages/login/signup-form/signup-form.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
-    NgMaterialModule
+    NgMaterialModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@ $sm: 28em; // mobile and low-res tablets
 $xs: 20em;
 
 @mixin responsive($query) {
-    @media ( min-width: + $query ) {
+    @media ( min-width: $query ) {
         @content;
     }
 }
