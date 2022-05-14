@@ -18,7 +18,11 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './pages/login/login-form/login-form.component';
 import { SignupFormComponent } from './pages/login/signup-form/signup-form.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
+import { jwtInterceptorProvider } from './services/jwtinterceptor.provider';
+import { errorInterceptorProvider } from './services/errorInterceptor.provider';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +50,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
+    AuthService,
+    jwtInterceptorProvider,
+    errorInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

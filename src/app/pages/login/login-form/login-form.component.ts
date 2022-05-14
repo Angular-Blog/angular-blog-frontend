@@ -27,17 +27,21 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    
   }
 
   saveDetails(form: any) {
     this.authService.login(form.value.email, form.value.password).subscribe(data => {
       const result = data as any
+      console.log(data)
       if(result.username && result.token) {
         localStorage.setItem("currentUser", JSON.stringify(result))
         this.store.dispatch(loginUser({username: result.username}))
         this.router.navigate(['/home'])
       }
+    },
+    error => {
+      this.form.setValue({email: "", password: ""})
     })
   }
 }
