@@ -22,7 +22,7 @@
             <mat-label>Confirm Password</mat-label>
             <input matInput formControlName="confirmpassword" name="confirmpassword" [type]="flag2 ? 'password' : 'text'" required pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$">
             <mat-icon (click)="flag2=!flag2" matSuffix>{{ flag2 ? 'visibility' : 'visibility_off' }}</mat-icon>
-            <mat-error *ngIf="form.value.password">Value does not match password</mat-error>
+            <mat-error *ngIf="form.value.confirmpassword">Value does not match password</mat-error>
           </mat-form-field>
           <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Sign Up</button>
     </form>

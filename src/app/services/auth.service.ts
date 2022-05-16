@@ -14,6 +14,12 @@ export class AuthService {
         )
     }
 
+    signUp(username: string, password:string, email:string) {
+        return this.http.post('/api/auth/register', {username, password, email}).pipe(
+          shareReplay()
+        )
+    }
+
     logout() {
       localStorage.setItem("currentUser", '')
     }
