@@ -4,22 +4,24 @@ import { createReducer, on } from "@ngrx/store";
 
 const initialState: User = {
     loggedIn: false,
-    username: ""
+    username: "",
+    userId: ""
 }
 
 const mockLogin: User = {
     loggedIn: true,
-    username: "tester"
+    username: "tester",
+    userId: ""
 }
 
 export const userReducer = createReducer(
     initialState,
-    on(loginUser, (state, {username}) => loginFunction(username)),
+    on(loginUser, (state, {username, userId}) => loginFunction(username, userId)),
     on(logoutUser, (state) => logoutFunction())
 )
 
-function loginFunction(username: string) {
-    const newState: User = {username: username, loggedIn: true}
+function loginFunction(username: string, userId: string) {
+    const newState: User = {username: username, loggedIn: true, userId: userId}
     return newState;
 }
 

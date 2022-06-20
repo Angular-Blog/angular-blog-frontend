@@ -1,5 +1,8 @@
 <app-nav>
     <div class="dashContent">
-        <p>dashboard worksss!</p>
+        <p>Welcome {{user.username}}</p>
+        <div>
+            <app-post-list [posts]="posts"></app-post-list>
+        </div>
     </div>
 </app-nav>

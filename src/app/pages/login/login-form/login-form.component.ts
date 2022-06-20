@@ -36,7 +36,7 @@ export class LoginFormComponent implements OnInit {
       console.log(data)
       if(result.username && result.token) {
         localStorage.setItem("currentUser", JSON.stringify(result))
-        this.store.dispatch(loginUser({username: result.username}))
+        this.store.dispatch(loginUser({username: result.username, userId: result.userId}))
         this.router.navigate(['/home'])
       }
     },
