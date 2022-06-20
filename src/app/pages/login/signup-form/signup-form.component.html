@@ -10,7 +10,7 @@
             <mat-label>Username</mat-label>
             <input matInput type="text" required formControlName="username" placeholder="Desired Username">
             <mat-icon matSuffix>person_outline</mat-icon>
-            <mat-error *ngIf="form.value.email">Email must be valid</mat-error>
+            <mat-error *ngIf="form.value.username">Username must be at least 6 characters long</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline" class="form-field">
             <mat-label>Password</mat-label>

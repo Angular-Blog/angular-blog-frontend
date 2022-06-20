@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { Store } from '@ngrx/store';
 import { User } from 'src/app/store/models/user.model';
@@ -34,7 +34,7 @@ export class SignupFormComponent implements OnInit {
 
   saveDetails(form: any) {
     if(form.value.password === form.value.confirmpassword) {
-      this.authService.signUp(form.value.username, form.value.email, form.value.password).subscribe(data => {
+      this.authService.signUp(form.value.username, form.value.password, form.value.email).subscribe(data => {
         const result = data as any
         console.log(data)
         if(result.username && result.token) {
