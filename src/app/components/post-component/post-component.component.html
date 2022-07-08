@@ -1,3 +1,11 @@
 <div class="postContainer">
-    <p>{{post.text}}</p>
+    <img class="profilePicture" src="https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg"/>
+    <div class="postContentContainer">
+        <div class="headerContent">
+            <p class="author">@{{post.user.username}}</p>
+            <span class="dateDivider">⦁</span>
+            <span class="date">{{dateDisplay}}</span>
+        </div>
+        <p class="content">{{post.text}}</p>
+    </div>
 </div>

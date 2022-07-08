@@ -42,24 +42,26 @@ export class NavComponent {
   
     logout() {
       this.store.dispatch(logoutUser())
+      this.router.navigate([''])
     }
 
     ngOnInit(): void {
       this.user$.subscribe((value: User) => {
         if(value.loggedIn) {
           this.loggedIn = true
+          return
         }
         else {
           if(localStorage.getItem('currentUser') != '' && localStorage.getItem('currentUser') != null){
             try {
               this.authService.checkIfValidToken().subscribe((data: any) => {
-                  console.log(data.username)
                   this.store.dispatch(loginUser({username: data.username, userId: data.id}))
                   this.loggedIn = true
               })
             }
             catch (error) {
               this.loggedIn = false;
+              this.store.dispatch(logoutUser())
               this.router.navigate([''])
             }
           }
