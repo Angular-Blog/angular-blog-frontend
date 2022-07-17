@@ -36,10 +36,9 @@ export class SignupFormComponent implements OnInit {
     if(form.value.password === form.value.confirmpassword) {
       this.authService.signUp(form.value.username, form.value.password, form.value.email).subscribe(data => {
         const result = data as any
-        console.log(data)
         if(result.username && result.token) {
           localStorage.setItem("currentUser", JSON.stringify(result))
-          this.store.dispatch(loginUser({username: result.username}))
+          this.store.dispatch(loginUser({username: result.username, userId: result.userId}))
           this.router.navigate(['/home'])
         }
       },

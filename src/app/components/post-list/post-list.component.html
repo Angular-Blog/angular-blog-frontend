@@ -1,0 +1,5 @@
+<div *ngFor="let post of sortedPostList; let i = index">
+    <div class="postContainer">
+        <app-post-component [post]="post"></app-post-component>
+    </div>
+</div>

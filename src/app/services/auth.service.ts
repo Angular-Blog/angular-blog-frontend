@@ -20,6 +20,12 @@ export class AuthService {
         )
     }
 
+    checkIfValidToken() {
+      return this.http.get('/api/auth/tokenCheck').pipe(
+        shareReplay()
+      )
+    }
+
     logout() {
       localStorage.setItem("currentUser", '')
     }

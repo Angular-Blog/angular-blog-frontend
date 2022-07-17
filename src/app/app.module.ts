@@ -23,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { jwtInterceptorProvider } from './services/jwtinterceptor.provider';
 import { errorInterceptorProvider } from './services/errorInterceptor.provider';
 import { AuthService } from './services/auth.service';
+import { PostService } from './services/post.service';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { PostComponentComponent } from './components/post-component/post-component.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { AuthService } from './services/auth.service';
     PageNotFoundComponent,
     LoginComponent,
     LoginFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    PostListComponent,
+    PostComponentComponent
   ],
   imports: [
     StoreModule.forRoot({
@@ -51,6 +56,7 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     AuthService,
+    PostService,
     jwtInterceptorProvider,
     errorInterceptorProvider
   ],

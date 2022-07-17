@@ -6,6 +6,8 @@ import { Store } from '@ngrx/store';
 import { User } from 'src/app/store/models/user.model';
 import { logoutUser } from 'src/app/store/actions/user-state.action';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { loginUser } from 'src/app/store/actions/user-state.action';
 
 @Component({
   selector: 'app-nav',
@@ -26,7 +28,8 @@ export class NavComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private store: Store<{user: User}>,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
     ) 
     {
       this.user$ = store.select('user')
@@ -39,16 +42,33 @@ export class NavComponent {
   
     logout() {
       this.store.dispatch(logoutUser())
+      this.router.navigate([''])
     }
 
     ngOnInit(): void {
       this.user$.subscribe((value: User) => {
         if(value.loggedIn) {
-          console.log(value)
           this.loggedIn = true
+          return
         }
         else {
-          this.router.navigate([''])
+          if(localStorage.getItem('currentUser') != '' && localStorage.getItem('currentUser') != null){
+            try {
+              this.authService.checkIfValidToken().subscribe((data: any) => {
+                  this.store.dispatch(loginUser({username: data.username, userId: data.id}))
+                  this.loggedIn = true
+              })
+            }
+            catch (error) {
+              this.loggedIn = false;
+              this.store.dispatch(logoutUser())
+              this.router.navigate([''])
+            }
+          }
+          else {
+            this.loggedIn = false;
+            this.router.navigate([''])
+          }
         }
       })
     }
