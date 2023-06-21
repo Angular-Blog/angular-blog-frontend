@@ -4,34 +4,41 @@
     padding: 10px;
     display: flex;
     border-bottom: 1px solid lightgray;
-}
 
-.profilePicture {
-    width: 60px;
-    height: 60px;
-    padding: 3px;
-    border-radius: 50%;
-    @include responsive($med) {
-        width: 80px;
-        height: 80px;
+    .profilePicture {
+        width: 60px;
+        height: 60px;
+        padding: 3px;
+        border-radius: 50%;
+        @include responsive($med) {
+            width: 80px;
+            height: 80px;
+        }
     }
-}
 
-.postContentContainer {
-    margin: 10px;
-}
+    .postContentContainer {
+        margin: 10px;
+    }
 
-.headerContent {
-    display: flex;
-    .author {
-        font-size: large;
-        font-weight: bold;
+    .headerContent {
+        display: flex;
+        .author {
+            font-size: large;
+            font-weight: bold;
+        }
+        .dateDivider {
+            margin: 1px 3px;
+            opacity: 75%;
+        }
+        .date {
+            margin-top: 2px;
+        }
     }
-    .dateDivider {
-        margin: 1px 3px;
-        opacity: 75%;
-    }
-    .date {
-        margin-top: 2px;
+
+    .buttonsContainer {
+        display: flex;
+        position: absolute;
+        right: 5%;
+        margin-top: 50px;
     }
 }

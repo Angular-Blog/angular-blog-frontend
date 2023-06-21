@@ -33,7 +33,6 @@ export class DashboardComponent implements OnInit {
 
   getUserPosts() {
     this.postService.getUserPosts(this.user.userId).subscribe(data => {
-      console.log()
       this.posts = data
     })
   }

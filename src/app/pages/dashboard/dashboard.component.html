@@ -1,8 +1,13 @@
 <app-nav>
     <div class="dashContent">
         <h1>Welcome {{user.username}}</h1>
-        <div>
-            <app-post-list [posts]="posts"></app-post-list>
-        </div>
+        <mat-grid-list cols="3" rowHeight="50vh">
+          <mat-grid-tile colspan="2">
+            <div class="postListContainer">
+              <app-post-list [posts]="posts"></app-post-list>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>2</mat-grid-tile>
+        </mat-grid-list>
     </div>
 </app-nav>

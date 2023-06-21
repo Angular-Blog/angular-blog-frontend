@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NgMaterialModule } from './ng-material/ng-material.module';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './store/reducers/user-state.reducer';
@@ -26,6 +27,7 @@ import { AuthService } from './services/auth.service';
 import { PostService } from './services/post.service';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostComponentComponent } from './components/post-component/post-component.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { PostComponentComponent } from './components/post-component/post-compone
     LoginFormComponent,
     SignupFormComponent,
     PostListComponent,
-    PostComponentComponent
+    PostComponentComponent,
+    UserComponent
   ],
   imports: [
     StoreModule.forRoot({
@@ -53,6 +56,7 @@ import { PostComponentComponent } from './components/post-component/post-compone
     LayoutModule,
     NgMaterialModule,
     HttpClientModule,
+    MatGridListModule,
   ],
   providers: [
     AuthService,
